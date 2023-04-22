@@ -1,0 +1,14 @@
+import mysql.connector
+kuma=mysql.connector.connect(
+    host='localhost',
+    user='abc',
+    password='password'
+)
+
+#check my connnection is valid or not
+print(kuma.is_connected())
+
+cur=kuma.cursor()  #cursor are pointer  
+cur.execute('SHOW DATABASE')
+for i in cur:
+    print(i)
